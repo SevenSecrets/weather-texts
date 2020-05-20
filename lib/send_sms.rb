@@ -2,15 +2,21 @@ require 'twilio-ruby'
 require 'dotenv'
 Dotenv.load
 
-account_sid = ENV['TWILIO_ACCOUNT_SID']
-auth_token = ENV['TWILIO_AUTH_TOKEN']
-client = Twilio::REST::Client.new(account_sid, auth_token)
+class SendSMS
+  def initialize
+    @account_sid = ENV['TWILIO_ACCOUNT_SID']
+    @auth_token = ENV['TWILIO_AUTH_TOKEN']
+    @client = Twilio::REST::Client.new(account_sid, auth_token)
+    @from = ENV['TWILIO_FROM_NO']
+    @to = ENV['YOUR_PHONE_NO']
+    @message = ""
+  end
 
-from = ENV['TWILIO_FROM_NO']
-to = ENV['YOUR_PHONE_NO']
+  def compose_message(message = "test message")
+    @message = message
+  end
 
-client.messages.create(
-  from: from,
-  to: to,
-  body: "Hey friend!"
-)
+  def send_message
+    client.messages.create(from: @from, to: @to, body: "Test message")
+  end
+end

@@ -12,7 +12,31 @@ describe Weather do
     end
 
     it 'sends a request to the climacell api' do
-      expect(@weather.get_weather).to be_truthy
+      #this sends a request but the response has nothing useful in it on purpose because I'm not testing the response
+      expect(@weather.get_weather_now("fakeapikey")).to be_truthy
+    end
+  end
+
+  describe 'sorting response data' do
+    before(:each) do
+      @weather = Weather.new
+      @response_data = double('response_data')
+      response_body = {
+        "temp" => {
+          "value" => 18
+        },
+        "precipitation" => {
+          "value" => 0
+        },
+        "surface_shortwave_radiation" => {
+          "value" => 15
+        }
+      }
+      allow(@response_data).to receive(:body) { response_body }
+    end
+
+    it 'returns the temp, precipitation, and uv' do
+      expect(@weather.sort_data(@response_data.body)).to include "Temperature" && "Precipitation" && "UV"
     end
   end
 end
