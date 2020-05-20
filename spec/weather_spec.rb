@@ -6,7 +6,7 @@ describe Weather do
     expect(weather).to be_instance_of Weather
   end
 
-  describe 'getting darksky data tests' do
+  describe 'getting api data tests' do
     before(:each) do
       @weather = Weather.new
     end
