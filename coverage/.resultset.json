@@ -1,0 +1,112 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/student/Documents/Projects/ruby-projects/weather-reminders/spec/controller_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          0,
+          0,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/student/Documents/Projects/ruby-projects/weather-reminders/lib/controller.rb": {
+        "lines": [
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/student/Documents/Projects/ruby-projects/weather-reminders/spec/weather_spec.rb": {
+        "lines": [
+          1,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0,
+          null,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/student/Documents/Projects/ruby-projects/weather-reminders/lib/weather.rb": {
+        "lines": [
+          1,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null
+        ]
+      }
+    },
+    "timestamp": 1590014463
+  }
+}
