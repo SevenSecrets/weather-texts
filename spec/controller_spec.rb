@@ -31,5 +31,10 @@ describe Controller do
     it 'composes a message' do
       expect(@controller.compose_message).to eq "The temperature now is 22°C, it is not raining, and the UV index is approximately 12."
     end
+
+    it 'sends a message' do
+      @controller.compose_message
+      expect(@controller.send_message).to be_truthy
+    end
   end
 end
