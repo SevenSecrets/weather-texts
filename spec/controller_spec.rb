@@ -1,4 +1,5 @@
 require 'controller'
+require 'test_helpers'
 
 describe Controller do
   it 'exists' do
@@ -8,31 +9,27 @@ describe Controller do
 
   describe 'receiving data from weather class tests' do
     before(:each) do
-      weather_double = double('weather')
-      response_double = double('response_data')
-      response_body = {
-        "temp" => {
-          "value" => 18
-        },
-        "precipitation" => {
-          "value" => 0
-        },
-        "surface_shortwave_radiation" => {
-          "value" => 15
-        }
-      }
-      allow(response_double).to receive(:body) { response_body }
-      allow(weather_double).to receive(:get_weather_now) { response_double }
-      allow(weather_double).to receive(:sort_data) { {
-        "Precipitation" => 0,
-        "Temperature" => 22,
-        "UV" => 302
-      } }
-      @controller = Controller.new(weather_double)
+      setup_controller_weather_doubles
     end
 
     it 'receives data from the weather class' do
       expect(@controller.get_data).to include "Temperature" && "Precipitation" && "UV"
+    end
+
+    it 'works out how much it is raining' do
+      @controller.get_data
+      expect(@controller.classify_rain).to eq "not raining"
+    end
+  end
+
+  describe 'message tests' do
+    before(:each) do
+      setup_controller_weather_doubles
+      @controller.get_data
+    end
+
+    it 'composes a message' do
+      expect(@controller.compose_message).to eq "The temperature now is 22°C, it is not raining, and the UV index is 12."
     end
   end
 end

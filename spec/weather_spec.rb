@@ -29,7 +29,7 @@ describe Weather do
           "value" => 0
         },
         "surface_shortwave_radiation" => {
-          "value" => 302
+          "value" => 12
         }
       }
       allow(@response_data).to receive(:body) { response_body }
