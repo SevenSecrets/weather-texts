@@ -29,7 +29,7 @@ describe Controller do
     end
 
     it 'composes a message' do
-      expect(@controller.compose_message).to eq "The temperature now is 22°C, it is not raining, and the UV index is 12."
+      expect(@controller.compose_message).to eq "The temperature now is 22°C, it is not raining, and the UV index is approximately 12."
     end
   end
 end

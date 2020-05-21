@@ -14,8 +14,9 @@ class Controller
 
   def compose_message
     rain = classify_rain(@weather_data["Precipitation"])
-    temperature = @weather_data["Temperature"]
-    uv = @weather_data["UV"]
+    temperature = @weather_data["Temperature"].to_s
+    uv = @weather_data["UV"].to_s
+    @message = "The temperature now is " + temperature + "°C, it is " + rain + ", and the UV index is approximately " + uv + "."
   end
 
   def classify_rain(rain = @weather_data["Precipitation"])
