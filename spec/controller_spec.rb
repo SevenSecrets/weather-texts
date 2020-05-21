@@ -23,11 +23,11 @@ describe Controller do
       }
       allow(response_double).to receive(:body) { response_body }
       allow(weather_double).to receive(:get_weather_now) { response_double }
-      allow(weather_double).to receive(:sort_data) {{
+      allow(weather_double).to receive(:sort_data) { {
         "Precipitation" => 0,
-        "Temperature" => 18,
-        "UV" => 15
-      }}
+        "Temperature" => 22,
+        "UV" => 302
+      } }
       @controller = Controller.new(weather_double)
     end
 

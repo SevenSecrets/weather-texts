@@ -23,13 +23,13 @@ describe Weather do
       @response_data = double('response_data')
       response_body = {
         "temp" => {
-          "value" => 18
+          "value" => 22
         },
         "precipitation" => {
           "value" => 0
         },
         "surface_shortwave_radiation" => {
-          "value" => 15
+          "value" => 302
         }
       }
       allow(@response_data).to receive(:body) { response_body }

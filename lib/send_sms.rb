@@ -17,6 +17,6 @@ class SendSMS
   end
 
   def send_message
-    client.messages.create(from: @from, to: @to, body: "Test message")
+    client.messages.create(from: @from, to: @to, body: @message)
   end
 end
