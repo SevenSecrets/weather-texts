@@ -4,4 +4,4 @@ source "https://rubygems.org"
 
 gem 'dotenv'
 gem 'twilio-ruby'
-gem 'unirest', '~> 1.1', '>= 1.1.2'
+gem 'unirest'
