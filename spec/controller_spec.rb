@@ -9,7 +9,7 @@ describe Controller do
 
   describe 'receiving data from weather class tests' do
     before(:each) do
-      setup_controller_weather_doubles
+      setup_controller_doubles
     end
 
     it 'receives data from the weather class' do
@@ -24,7 +24,7 @@ describe Controller do
 
   describe 'message tests' do
     before(:each) do
-      setup_controller_weather_doubles
+      setup_controller_doubles
       @controller.get_data
     end
 

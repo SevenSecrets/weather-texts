@@ -1,5 +1,5 @@
-require 'weather'
-require 'send_sms'
+require_relative 'weather'
+require_relative 'send_sms'
 
 class Controller
   def initialize(weather = Weather.new, send_sms = SendSMS.new)
