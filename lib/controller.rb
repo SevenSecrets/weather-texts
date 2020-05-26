@@ -11,7 +11,7 @@ class Controller
 
   def get_data
     data = @weather.get_weather_now
-    @weather_data = @weather.sort_data(data.body)
+    @weather_data = @weather.sort_data(data)
   end
 
   def compose_message

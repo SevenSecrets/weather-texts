@@ -1,11 +1,7 @@
+require 'sinatra'
 require_relative 'controller'
 
-controller = Controller.new
-
-while true do
+get '/' do
+  controller = Controller.new
   controller.get_data
-  controller.compose_message
-  controller.send_message
-  p "message sent"
-  sleep(86400)
 end

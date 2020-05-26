@@ -3,8 +3,7 @@
 source "https://rubygems.org"
 
 gem 'dotenv'
-gem 'rest-client', ">= 1.8.0"
+gem 'rest-client'
 gem 'sinatra'
 gem 'thin'
 gem 'twilio-ruby'
-gem 'unirest'
