@@ -23,7 +23,7 @@ class Weather
     sorted_data = Hash.new
     precipitation = response_data["precipitation"]["value"]
     temperature = response_data["temp"]["value"]
-    uv = (response_data["surface_shortwave_radiation"]["value"])
+    uv = (response_data["surface_shortwave_radiation"]["value"] / 25)
     sorted_data.store("Precipitation", precipitation)
     sorted_data.store("Temperature", temperature)
     sorted_data.store("UV", uv)
