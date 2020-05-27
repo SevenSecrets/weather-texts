@@ -2,11 +2,11 @@ require_relative 'weather'
 require_relative 'send_sms'
 
 class Controller
-  def initialize(weather = Weather.new, send_sms = SendSMS.new)
+  def initialize(weather = Weather.new, send_message = SendMessage.new)
     @weather = weather
     @weather_data = {}
     @message = ""
-    @send_sms = send_sms
+    @send_message = send_message
   end
 
   def get_data
@@ -21,8 +21,8 @@ class Controller
     @message = "The temperature now is " + temperature + "°C, it is " + rain + ", and the UV index is approximately " + uv + "."
   end
 
-  def send_message(message = @message)
-    @send_sms.send_message(message)
+  def send_message(chat_id = "none", message = @message)
+    @send_message.send_message(message)
   end
 
   def classify_rain(rain = @weather_data["Precipitation"])
