@@ -4,7 +4,7 @@ require_relative 'controller'
 
 enable :sessions
 
-get '/test' do
+get '/' do
   controller = Controller.new
   controller.get_data
 end
