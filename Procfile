@@ -1,1 +1,1 @@
-web: ruby lib/app.rb -p 3000
+web: ruby lib/app.rb
