@@ -13,7 +13,7 @@ class SendMessage
     begin
       RestClient.post("https://api.telegram.org/bot" + @telegramAPI + "/sendMessage", {}, header)
     rescue RestClient::ExceptionWithResponse => e
-      p e.response
+      p JSON.parse(e.response)
     end
     p "message sent"
   end
