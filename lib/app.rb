@@ -19,5 +19,5 @@ post '/new-message' do
   p "BREAK"
   p "BREAK"
   p "BREAK"
-  puts message["chat"]
+  p message["chat"]
 end
