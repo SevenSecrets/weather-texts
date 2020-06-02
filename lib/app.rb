@@ -19,5 +19,5 @@ post '/new-message' do
   p "BREAK"
   p "BREAK"
   p "BREAK"
-  p message["chat"]["id"]
+  p message["update_id"]
 end
