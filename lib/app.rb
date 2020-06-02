@@ -13,6 +13,6 @@ post '/new-message' do
   message = JSON.parse(request.body.read)
   controller = Controller.new
   controller.get_data
-  controller.compose_message
+  p controller.compose_message
   controller.send_message(message["message"]["chat"]["id"])
 end
