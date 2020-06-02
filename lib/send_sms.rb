@@ -14,7 +14,7 @@ class SendMessage
   end
 
   def send_message(message, chat_id = "none")
-    RestClient.post("https://api.telegram.org/bot" + @telegramAPI + "/sendMessage", headers: { chat_id: chat_id, text: message })
-    p 'message sent'
+    header = { chat_id: chat_id, text: message }
+    RestClient.post("https://api.telegram.org/bot" + @telegramAPI + "/sendMessage", {}, header)
+    p "message sent"
   end
-end
