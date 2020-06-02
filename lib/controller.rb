@@ -22,7 +22,7 @@ class Controller
   end
 
   def send_message(chat_id = "none", message = @message)
-    @send_message.send_message(message)
+    @send_message.send_message(message, chat_id)
   end
 
   def classify_rain(rain = @weather_data["Precipitation"])
