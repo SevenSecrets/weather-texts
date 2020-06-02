@@ -10,10 +10,10 @@ get '/' do
 end
 
 post '/new-message' do
-  message = request.body
+  message = request.body.read
   controller = Controller.new
   controller.get_data
   controller.compose_message
   # controller.send_message(message.chat.id)
-  p message.read
+  p JSON.parse(message.read)
 end
