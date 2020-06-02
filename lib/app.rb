@@ -15,5 +15,9 @@ post '/new-message' do
   controller.get_data
   controller.compose_message
   # controller.send_message(message.chat.id)
-  p message.update_id
+  p message
+  p "BREAK"
+  p "BREAK"
+  p "BREAK"
+  p message["chat"]
 end
