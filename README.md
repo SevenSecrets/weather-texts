@@ -1,6 +1,7 @@
 # Weather Reminders
 
 This app texts me to tell me what the weather is like, including temperature, rain, and (since I'm ginger and forget to wear suncream far too often) UV index.
+The app currently runs on Heroku and is pinged by a Telegram bot every time someone messages it, responding with the sorted data gathered from the Climacell API about the weather conditions at a location. Currently that location is static, but I am working on adding a feature that allows a user to send their location data to the Telegram bot and use that instead of the LAT/LON environment variables.
 
 ## Using the app
 
@@ -8,12 +9,11 @@ This app texts me to tell me what the weather is like, including temperature, ra
 First, run bundle in order to set up all the gems. You will then need to create a .env file in the root folder, in which you should store all of the private keys and phone numbers which are used by the Twilio and Climacell APIs:
 ```
 CLIMACELL_API_KEY="YOUR CLIMACELL API KEY HERE"
-TWILIO_ACCOUNT_SID="YOUR TWILIO ACCOUNT SID HERE"
-TWILIO_AUTH_TOKEN="YOUR TWILIO AUTH TOKEN HERE"
-TWILIO_FROM_NO="YOUR TWILIO PHONE NUMBER HERE"
-YOUR_PHONE_NO="THE PHONE NUMBER YOU WISH TO SEND TEXTS TO HERE"
+TELGRAM_API_KEY="YOUR TELEGRAM API KEY HERE"
+LAT="YOUR LATITUDE"
+LON="YOUR LONGITUDE"
 ```
 ### Running the app 
-By default, all you need to do in order to run the app from here is to run ruby `./lib/app.rb`, but I would recommend running the test suite via `rspec` first in order to identify any possible issues.
+By default, all you need to do in order to run the app from here is to run `ruby ./lib/app.rb`, but I would recommend running the test suite via `rspec` first in order to identify any possible issues.
 
-Running the app like this will send a text message to your chosen phone number containing the temperature, amount of rain, and UV index at the current time. By default this will be for Camden Town, London (because that's where I am), but this can be overridden by passing the COMPLETE HERE.
+When run, the app will be accessible on port 5678 and can receive get requests to '/' in order to simply display a message containing the weather data or post requests (via the Telegram bot API) to '/new-message' in order to respond with the sorted weather data.
