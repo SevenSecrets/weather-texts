@@ -18,4 +18,4 @@ By default, all you need to do in order to run the app from here is to run `ruby
 
 When run, the app will be accessible on port 5678 and can receive get requests to '/' in order to simply display a message containing the weather data or post requests (via the Telegram bot API) to '/new-message' in order to respond with the sorted weather data.
 
-The app is currently running at `https://morning-island-67647.herokuapp.com/`, returning data for Camden Town, if you want to check it out. Alternatively, use the bot on Telegram: @artemis_weather_alert_bot.
+The app is currently running at `https://morning-island-67647.herokuapp.com/`, returning data for Camden Town, if you want to check it out. Alternatively, use the bot on Telegram: [@artemis_weather_alert_bot](https://t.me/artemisweatheralertbot).
