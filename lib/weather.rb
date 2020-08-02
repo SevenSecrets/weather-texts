@@ -1,5 +1,6 @@
 require 'rest-client'
 require 'dotenv'
+require 'json'
 Dotenv.load
 
 class Weather
@@ -14,7 +15,7 @@ class Weather
     response = RestClient.get("https://api.climacell.co/v3/weather/realtime?lat=" + @lat + "&lon=" + @lon + "&fields=temp%2Cprecipitation%2Csurface_shortwave_radiation",
     headers={
       "content-type": "application/json",
-      "apikey": apikey
+     "apikey": apikey
     })
     @response_data = JSON.parse(response)
   end

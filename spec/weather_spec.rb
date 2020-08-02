@@ -13,7 +13,7 @@ describe Weather do
 
     it 'sends a request to the climacell api' do
       #this sends a request but the response has nothing useful in it on purpose because I'm not testing the response
-      expect(@weather.get_weather_now("fakeapikey")).to be_truthy
+      expect(@weather.get_weather_now()).to be_truthy
     end
   end
 
