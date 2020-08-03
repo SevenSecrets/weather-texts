@@ -10,8 +10,6 @@ class Controller
   end
 
   def get_data(lat, lon)
-    lat = lat.to_s
-    lon = lon.to_s
     data = @weather.get_weather_now(lat, lon)
     @weather_data = @weather.sort_data(data)
   end

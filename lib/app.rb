@@ -15,8 +15,8 @@ end
 post '/new-message' do
   message = JSON.parse(request.body.read)
   if message["message"]["location"]
-    lat = message["message"]["location"]["latitude"]
-    lon = message["message"]["location"]["longitude"]
+    lat = message["message"]["location"]["latitude"].to_s
+    lon = message["message"]["location"]["longitude"].to_s
   else
     lat = ENV["LAT"]
     lon = ENV["LONG"]
