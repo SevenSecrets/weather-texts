@@ -6,17 +6,6 @@ describe Weather do
     expect(weather).to be_instance_of Weather
   end
 
-  describe 'getting api data tests' do
-    before(:each) do
-      @weather = Weather.new
-    end
-
-    it 'sends a request to the climacell api' do
-      #this sends a request but the response has nothing useful in it on purpose because I'm not testing the response
-      expect(@weather.get_weather_now()).to be_truthy
-    end
-  end
-
   describe 'sorting response data' do
     before(:each) do
       @weather = Weather.new
