@@ -1,6 +1,9 @@
 require 'sinatra'
 require 'rest-client'
+require 'dotenv'
 require_relative 'controller'
+
+Dotenv.load
 
 enable :sessions
 
@@ -13,7 +16,10 @@ post '/new-message' do
   message = JSON.parse(request.body.read)
   if message["message"]["location"]
     lat = message["message"]["location"]["latitude"]
-    long = message["message"]["location"]["longitude"]
+    lon = message["message"]["location"]["longitude"]
+  else
+    lat = ENV["LAT"]
+    lon = ENV["LONG"]
   end
   controller = Controller.new
   controller.get_data(lat, lon)
