@@ -1,6 +1,6 @@
 # Weather Reminders
 
-[![Build Status](https://travis-ci.org/{SevenSecrets}/{weather-texts}.png?branch=master)](https://travis-ci.org/{SevenSecrets}/{weather-texts})
+[![Build Status](https://travis-ci.org/SevenSecrets/weather-texts.png?branch=master)](https://travis-ci.org/SevenSecrets/weather-texts)
 
 
 This app texts me to tell me what the weather is like, including temperature, rain, and (since I'm ginger and forget to wear suncream far too often) UV index.
