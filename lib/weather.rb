@@ -5,14 +5,14 @@ Dotenv.load
 
 class Weather
   def initialize
-    @lat = ENV['LAT']
-    @lon = ENV['LON']
+    # @lat = ENV['LAT']
+    # @lon = ENV['LON']
     @response_data = ""
     @sorted_data = ""
   end
 
-  def get_weather_now(apikey = ENV['CLIMACELL_API_KEY'])
-    response = RestClient.get("https://api.climacell.co/v3/weather/realtime?lat=" + @lat + "&lon=" + @lon + "&fields=temp%2Cprecipitation%2Csurface_shortwave_radiation",
+  def get_weather_now(lat, lon, apikey = ENV['CLIMACELL_API_KEY'])
+    response = RestClient.get("https://api.climacell.co/v3/weather/realtime?lat=" + lat + "&lon=" + lon + "&fields=temp%2Cprecipitation%2Csurface_shortwave_radiation",
     headers={
       "content-type": "application/json",
      "apikey": apikey

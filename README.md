@@ -1,5 +1,8 @@
 # Weather Reminders
 
+[![Build Status](https://travis-ci.org/{SevenSecrets}/{weather-texts}.png?branch=master)](https://travis-ci.org/{SevenSecrets}/{weather-texts})
+
+
 This app texts me to tell me what the weather is like, including temperature, rain, and (since I'm ginger and forget to wear suncream far too often) UV index.
 The app currently runs on Heroku and is pinged by a Telegram bot every time someone messages it, responding with the sorted data gathered from the Climacell API about the weather conditions at a location. Currently that location is static, but I am working on adding a feature that allows a user to send their location data to the Telegram bot and use that instead of the LAT/LON environment variables.
 

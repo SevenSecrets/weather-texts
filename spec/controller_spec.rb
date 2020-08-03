@@ -13,11 +13,11 @@ describe Controller do
     end
 
     it 'receives data from the weather class' do
-      expect(@controller.get_data).to include "Temperature" && "Precipitation" && "UV"
+      expect(@controller.get_data(0, 0)).to include "Temperature" && "Precipitation" && "UV"
     end
 
     it 'works out how much it is raining' do
-      @controller.get_data
+      @controller.get_data(0, 0)
       expect(@controller.classify_rain).to eq "not raining"
     end
   end
@@ -25,7 +25,7 @@ describe Controller do
   describe 'message tests' do
     before(:each) do
       setup_controller_doubles
-      @controller.get_data
+      @controller.get_data(0, 0)
     end
 
     it 'composes a message' do

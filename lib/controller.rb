@@ -9,8 +9,8 @@ class Controller
     @send_message = send_message
   end
 
-  def get_data
-    data = @weather.get_weather_now
+  def get_data(lat, lon)
+    data = @weather.get_weather_now(lat, lon)
     @weather_data = @weather.sort_data(data)
   end
 
