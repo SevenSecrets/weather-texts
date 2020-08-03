@@ -11,7 +11,7 @@ end
 
 post '/new-message' do
   message = JSON.parse(request.body.read)
-  p message
+  p message["message"]["location"]
   controller = Controller.new
   controller.get_data
   reply = controller.compose_message
