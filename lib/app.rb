@@ -19,7 +19,7 @@ post '/new-message' do
     lon = message["message"]["location"]["longitude"].to_s
   else
     lat = ENV["LAT"]
-    lon = ENV["LONG"]
+    lon = ENV["LON"]
   end
   controller = Controller.new
   controller.get_data(lat, lon)
