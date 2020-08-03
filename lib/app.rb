@@ -9,7 +9,7 @@ enable :sessions
 
 get '/' do
   controller = Controller.new
-  controller.get_data
+  controller.get_data(ENV["LAT"], ENV["LON"])
 end
 
 post '/new-message' do
