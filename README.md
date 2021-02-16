@@ -6,6 +6,8 @@
 This app texts me to tell me what the weather is like, including temperature, rain, and (since I'm ginger and forget to wear suncream far too often) UV index.
 The app currently runs on Heroku and is pinged by a Telegram bot every time someone messages it, responding with the sorted data gathered from the Climacell API about the weather conditions at a location. If the user sends a location in the Telegram message, via the "Send my current location" feature, then the weather returned is for that location, otherwise it defaults to Kentish Town.
 
+The app runs on Sinatra, because it's far easier to get something like this up and running using a fairly barebones setup rather than using a whole Rails project, especially since there's no database interaction. The main issues I faced while building it were related to accessing and using the Telegram API, which I was entirely new to and took some getting used to. I initially intended to have this app send you an SMS every day or something along those lines, but realised that I didn't want to have to pay a subscription fee to a service for what is essentially a hobby and learning project, so setting it up to work via request through the Telegram API is perfect.
+
 ## Using the app
 
 ### Setup 
